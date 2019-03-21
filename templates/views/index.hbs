@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css">
+    <link rel="icon" href="/img/weather.png">
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="error-1"></p>
+        <p id="result-1"></p>
+    </div>
+    {{>footer}}
+
+    {{!-- always place your js at the bottom to ensure every thing is loaded --}}
+    <script src="/js/main.js"></script>
+</body>
+</html>
