@@ -3,8 +3,6 @@ const weatherForm = document.querySelector('form');
 const searchElement = document.querySelector('input');
 
 // will hold the mesages to be displayed in the UI
-// const messageOne = document.getElementById("error");
-// const messageTwo = document.getElementById("result");
 const messageOne = document.querySelector("#error-1");
 const messageTwo = document.querySelector("#result-1");
 
@@ -23,7 +21,6 @@ weatherForm.addEventListener("submit", (e) => {
     fetch("http://localhost:3000/weather?address=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                //console.log(data.error);
                 messageOne.textContent = data.error;
             } else {
                 messageOne.textContent = data.location;
