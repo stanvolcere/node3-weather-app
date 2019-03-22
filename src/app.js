@@ -8,6 +8,9 @@ const forecast = require('./utils/forecast');
 // allows for easier path manipulation
 var app = express();
 
+// port number that will be used in deployement environment
+const port = process.env.PORT || 3000;
+
 // useful paths 
 var publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -94,6 +97,6 @@ app.get("*", (req, res) => {
     });
 });
 
-app.listen(3000,() => {
-    console.log("Server has started!"); 
+app.listen(port,() => {
+    console.log("Server has started on port " + port); 
 });

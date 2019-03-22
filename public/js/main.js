@@ -18,7 +18,7 @@ weatherForm.addEventListener("submit", (e) => {
     //responsible for retreiving JSON Data
     // this API returns random puzzle string
     //below code means do something and then do the following function
-    fetch("http://localhost:3000/weather?address=" + location).then((response) => {
+    fetch("/weather?address=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error;
