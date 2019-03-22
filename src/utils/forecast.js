@@ -6,8 +6,8 @@ const request = require("request");
 //    - Coordinate error, pass string for error
 //    - Success, pass forecast string for data (same format as from before)
 const forecast = (latitude, longitude, callback) => {
-    var url = 'https://api.darksky.net/forecast/dce8f49d5efdc0a0d5750ed720e4a9ff/' + latitude + ',' + longitude;
-
+    var url = 'https://api.darksky.net/forecast/dce8f49d5efdc0a0d5750ed720e4a9ff/' + latitude + ',' + longitude + "?units=si";
+    
     request({url, json: true}, (error, {body}) => {
         if (error) {
             callback("There was an error with connecting with the weather service!", undefined);
@@ -15,7 +15,7 @@ const forecast = (latitude, longitude, callback) => {
             callback(body.error, undefined);
         } else {
             callback(undefined, {
-                summary: body.daily.summary,
+                summary: body.daily.summary
             });
         }
     });
