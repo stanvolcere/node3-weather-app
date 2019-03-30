@@ -3,7 +3,7 @@ const request = require("request");
 // this way of setting up the function allows for reusablity because it heavily decoupled from the 
 // functionlity that requires it
 const geocode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1Ijoic3RhbnZvbGNlcmUiLCJhIjoiY2p0NjNnejllMGMzYjRhbXNpcXhjNnBleCJ9.mVUgMQiiDg4XlrbVoPEitw'
+    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=' + process.env.MAPBOX_KEY;
   
     // usage of property shorthand and object destructuring here
     request({url, json: true}, (error, {body}) => {
